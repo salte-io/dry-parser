@@ -1,11 +1,11 @@
 {
   "name": "dry-parser",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "An object parsing tool built to uphold the DRY rule.",
   "main": "dry-parser.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TheMetabyte/dry-parser.git"
+    "url": "https://github.com/arxstudios/dry-parser.git"
   },
   "keywords": [
     "dry",
@@ -14,12 +14,12 @@
     "json",
     "object"
   ],
-  "author": "Nick Woodward <nickwoodwrd@gmail.com>",
+  "author": "Arx Studios <nickwoodwrd@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TheMetabyte/dry-parser/issues"
+    "url": "https://github.com/arxstudios/dry-parser/issues"
   },
-  "homepage": "https://github.com/TheMetabyte/dry-parser#readme",
+  "homepage": "https://github.com/arxstudios/dry-parser#readme",
   "dependencies": {
     "lodash": "^3.10.0"
   }
