@@ -19,10 +19,10 @@ $ npm install dry-parser
     "dir": {
         "assets": "assets",
         "less": "{dir.assets}/less",
-        "bower": "{dir.assets}/bower_components",
+        "bower": "{dir.assets}/bower_components"
     },
     "lib": {
-        "jquery": "{dir.bower}/jquery/jquery.js",
+        "jquery": "{dir.bower}/jquery/jquery.js"
     }
 }
 ```
@@ -50,10 +50,10 @@ config = dry.config;
     "dir": {
         "assets": "assets",
         "less": "assets/less",
-        "bower": "assets/pkgs",
+        "bower": "assets/pkgs"
     },
     "lib": {
-        "jquery": "assets/pkgs/jquery/jquery.js",
+        "jquery": "assets/pkgs/jquery/jquery.js"
     }
 }
 ```
