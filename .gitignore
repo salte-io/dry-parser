@@ -1,0 +1,45 @@
+# NodeJS and Gulp Oriented GitIgnore file
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build Systems #
+#################
+node_modules/
+
+# Bower Directory #
+###################
+bower_components/
+pkgs/
+
+.sass-cache
+*.css.map
+
+# Gulp Build Directories #
+##########################
+dev/
+release/
