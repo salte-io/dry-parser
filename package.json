@@ -1,6 +1,6 @@
 {
   "name": "dry-parser",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "An object parsing tool built to uphold the DRY rule.",
   "main": "dry-parser.js",
   "repository": {
