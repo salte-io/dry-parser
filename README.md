@@ -59,7 +59,7 @@ config = dry.config;
 ```
 
 ## License
-[MIT](https://github.com/TheMetabyte/dry-parser/blob/master/LICENSE)
+[MIT](https://github.com/arxstudios/dry-parser/blob/master/LICENSE)
 
 [npm-downloads-image]: http://img.shields.io/npm/dm/dry-parser.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/dry-parser
