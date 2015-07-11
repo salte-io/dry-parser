@@ -29,18 +29,27 @@ $ npm install dry-parser
 
 ### _app.js_
 
+**_VERBOSE_**
+
 ```js
+// Load dry-parser.
 var dry = require('dry-parser');
+
+// Load our configuration file.
 var config = require('./config.json');
 
-// first we want to set dry parsers configuration object.
-dry.config = config;
+// Parse our config and get the real values.
+config = dry.parse(config);
+```
 
-// next we want to parse and convert each of its values.
-dry.convert();
+**_CONDENSED_**
 
-// finally we want to bring it back into our config object.
-config = dry.config;
+```js
+// Load dry-parser.
+var dry = require('dry-parser');
+
+// Load our configuration file and parse it into the real values.
+var config = dry.parse(require('./config.json'));
 ```
 
 **_The config object is equivalent to the following._**
