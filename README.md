@@ -14,8 +14,6 @@ $ npm install dry-parser
 
 ### _config.json - input_
 
-**_INPUT_**
-
 ```json
 {
     "dir": {
