@@ -1,32 +1,32 @@
 {
-	"name": "dry-parser",
-	"version": "0.1.7",
-	"description": "A simple tool for parsing JavaScript objects to avoid repetition.",
-	"main": "dry-parser.js",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/arxstudios/dry-parser.git"
-	},
-	"keywords": [
-		"dry",
-		"parser",
-		"config",
-		"json",
-		"object"
-	],
-	"author": "Arx Studios <nickwoodwrd@gmail.com>",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/arxstudios/dry-parser/issues"
-	},
-	"homepage": "https://github.com/arxstudios/dry-parser#readme",
-	"dependencies": {
-		"lodash": "^3.10.0"
-	},
-	"devDependencies": {
-		"chai": "^3.0.0"
-	},
-	"scripts": {
-        "test": "mocha"
-	}
+  "name": "dry-parser",
+  "version": "0.1.8",
+  "description": "A simple tool for parsing JavaScript objects to avoid repetition.",
+  "main": "dry-parser.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arxstudios/dry-parser.git"
+  },
+  "keywords": [
+    "dry",
+    "parser",
+    "config",
+    "json",
+    "object"
+  ],
+  "author": "Arx Studios <nickwoodwrd@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arxstudios/dry-parser/issues"
+  },
+  "homepage": "https://github.com/arxstudios/dry-parser#readme",
+  "dependencies": {
+    "lodash": "^3.10.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
 }
