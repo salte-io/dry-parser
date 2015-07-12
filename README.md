@@ -18,11 +18,11 @@ $ npm install dry-parser
 {
     "dir": {
         "assets": "assets",
-        "less": "{dir.assets}/less",
-        "bower": "{dir.assets}/bower_components"
+        "less": "{dir.assets}/less", === "assets/less"
+        "bower": "{dir.assets}/bower_components" === "assets/bower_components"
     },
     "lib": {
-        "jquery": "{dir.bower}/jquery/jquery.js"
+        "jquery": "{dir.bower}/jquery/jquery.js" === "assets/bower_components/jquery/jquery.js"
     }
 }
 ```
@@ -50,21 +50,6 @@ var dry = require('dry-parser');
 
 // Load our configuration file and parse it into the real values.
 var config = dry.parse(require('./config.json'));
-```
-
-**_The config object is equivalent to the following._**
-
-```json
-{
-    "dir": {
-        "assets": "assets",
-        "less": "assets/less",
-        "bower": "assets/pkgs"
-    },
-    "lib": {
-        "jquery": "assets/pkgs/jquery/jquery.js"
-    }
-}
 ```
 
 ## License
