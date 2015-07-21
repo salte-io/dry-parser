@@ -1,17 +1,17 @@
 # Dry Parser
-[![NPM version][npm-image]][npm-url]
-[![NPM downloads][npm-downloads-image]][npm-url]
+[![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url]
 
 A simple tool for parsing JavaScript objects to avoid repetition.
 
 > This tool was primarily developed to parse config files.
 
 ## Installation
+
 ```
 $ npm install dry-parser
 ```
-## Usage
 
+## Usage - Parsing an Object
 ### _config.json - input_
 
 ```json
@@ -29,8 +29,6 @@ $ npm install dry-parser
 
 ### _app.js_
 
-**_VERBOSE_**
-
 ```js
 // Load dry-parser.
 var dry = require('dry-parser');
@@ -40,16 +38,6 @@ var config = require('./config.json');
 
 // Parse our config and get the real values.
 config = dry.parse(config);
-```
-
-**_CONDENSED_**
-
-```js
-// Load dry-parser.
-var dry = require('dry-parser');
-
-// Load our configuration file and parse it into the real values.
-var config = dry.parse(require('./config.json'));
 ```
 
 ### _config.json - output_
@@ -64,6 +52,49 @@ var config = dry.parse(require('./config.json'));
     "lib": {
         "jquery": "assets/bower_components/jquery/jquery.js"
     }
+}
+```
+
+## Usage - Bi-Parsing two objects
+
+### _dir.json - input_
+
+```json
+{
+    "assets": "assets",
+    "less": "{assets}/less",
+    "bower": "{assets}/bower_components"
+}
+```
+
+### _lib.json - input_
+
+```json
+{
+    "jquery": "{bower}/jquery/jquery.js"
+}
+```
+
+### _app.js_
+
+```js
+// Load dry-parser.
+var dry = require('dry-parser');
+
+// Load our configuration file.
+var dir = require('./dir.json');
+
+var lib = require('./lib.json');
+
+// Parse our config and get the real values.
+lib = dry.parse(lib, dir);
+```
+
+### _lib.json - output_
+
+```json
+{
+    "jquery": "assets/bower_components/jquery/jquery.js"
 }
 ```
 
