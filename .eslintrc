@@ -1,9 +1,6 @@
 {
 	"env": {
-		"browser": true,
-		"jquery": true,
 		"node": true,
-		"amd": true,
 		"mocha": true
 	},
 	"globals": {
@@ -90,7 +87,7 @@
 		"comma-style": [2, "last"],
 		"computed-property-spacing": [2, "never"],
 		"eol-last": 2,
-		"indent": [2, "tab"],
+		"indent": 2,
 		"new-parens": 2,
 		"no-continue": 2,
 		"no-lonely-if": 2,
