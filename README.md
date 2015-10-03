@@ -1,6 +1,8 @@
 # Dry Parser
 [![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url]
 
+[![Travis][travis-ci-image]][travis-ci-url]
+
 A simple tool for parsing JavaScript objects to avoid repetition.
 
 > This tool was primarily developed to parse config files.
@@ -101,6 +103,8 @@ lib = dry.parse(lib, dir);
 ## License
 [MIT](https://github.com/arxstudios/dry-parser/blob/master/LICENSE)
 
-[npm-downloads-image]: http://img.shields.io/npm/dm/dry-parser.svg?style=flat-square
+[npm-downloads-image]: http://img.shields.io/npm/dm/dry-parser.svg?style=flat
 [npm-url]: https://npmjs.org/package/dry-parser
-[npm-image]: http://img.shields.io/npm/v/dry-parser.svg?style=flat-square
+[npm-image]: http://img.shields.io/npm/v/dry-parser.svg?style=flat
+[travis-ci-image]: https://img.shields.io/travis/rust-lang/rust.svg?style=flat
+[travis-ci-url]: https://travis-ci.org/arxstudios/dry-parser
