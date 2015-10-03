@@ -2,7 +2,7 @@
   "name": "dry-parser",
   "version": "0.2.0",
   "description": "A simple tool for parsing JavaScript objects to avoid repetition.",
-  "main": "dry-parser.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/arxstudios/dry-parser.git"
@@ -25,7 +25,8 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "eslint": "^0.24.1"
+    "eslint": "^0.24.1",
+    "mocha": "^2.3.3"
   },
   "scripts": {
     "test": "mocha"
