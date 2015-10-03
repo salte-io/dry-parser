@@ -1,7 +1,9 @@
 # Dry Parser
-[![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads-image]][npm-url]
+[![NPM version][npm-image]][npm-url]
+[![NPM downloads][npm-downloads-image]][npm-url]
 
 [![Travis][travis-ci-image]][travis-ci-url]
+[![Code Climate](https://img.shields.io/codeclimate/github/kabisaict/flow.svg)](https://codeclimate.com/github/arxstudios/dry-parser)
 
 A simple tool for parsing JavaScript objects to avoid repetition.
 
