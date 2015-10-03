@@ -1,9 +1,15 @@
 language: node_js
 node_js:
-  - "node"
-  - "stable"
-  - "iojs"
+- node
+- stable
+- iojs
+deploy:
+  provider: npm
+  email: admin@arxstudios.net
+  api_key:
+    secure: JmSWrzA1jeYvqqRtQSf0snhYvkqZZJ+UjXCiI3XG9CBmJoUtnFhsbzn/spm8VfmAP+uBL9c+FjLqdXuX7xPU7hOzRsRzBxz0hZFCJsujZ/W+OsZoYc9YPTN+SgFd0BYxhX4WJCxNSE67S+0hufd9uc+w2eW3BGvUy0gKjmBbmSYaUg3p4MsnRu00dUQcLgsIvejFIjIA5Lpq9utXdKK2eTfKRchfMfeVF8pSnL8UjacAazYln0b1xk6YHSnZr/k82zYZvo6ihEvYggmBqk0r23ZAZTnhyR4Cxed1Lpm85wRHK2aT1jcPkP4wocZ9HywU2cukgsh/6awJsRuf9ID2V/QUwjzKJNOoNQUOIA5KtK2i9cfuntIoZQt5bqfNg30Q/hUiYpvbPeb9+l/IUeUHD/tt+j9d5p2p1vmdwBgMAKnovxLZDkLCcdpEFuWfvPVZ5bjSRLFlddut6M6RIHE6jgmjmGhEoyskbmEJzbTfJ48Di02T0cboSyzkcb1ikFTq9cckJgxNMCHsKSL3tkBi7ncGoTH/MLqXV0Ej8GqrXX7Ctf1UKkZsjL91RisrQN53/aqUE0g3co+Mu4UwRpbCT0tQ2sE+ShWV1wwZ1R/3iRy5svOihg46rZFKSVbJ91SfFQTSQo7UUj8V1gz2ILVQHGJ8eTlem3NvAcow4zt8qxY=
+  on:
+    tags: true
 notifications:
   slack:
-    rooms:
-      - arxstudios:nW2GqWWgZFRcQzo0fnkiInEX#notifications
+    secure: ENKTdT08GhdFVnwUYfNp/S9/vdLjSettDlYKBNW1R4loPu8Z55n/fpQGvvvgm+G+aZrcEZb+pK9+ZmeLPm4dU1aCYILqAKHY90940XzyM7Xx5N7xnPl2LDwWhbXO8o5vYN0CJZksv3JBN8waUjNgpGKMX47kmSv9/uqec+1oKjExQCuIjpBm3DrGufh3pxCHc3bCacBba/hlnVMI9MWsdv7/UxExnKfOB5Z1nR67sJoRosBUo+UhZJZMcprcBk7XE+3py9xkW6LrbR2a60MguvVQTdTOEVX904e0ccttAzOZiYqFH/qaQ5iqKOuOUojNqHV7wHgm/Lw5a6mTSSEucYdyWdO6VYrn2LnWB0VKQHyqg07MzaVp85o49dR77+VgV3MEhqVHkLtTGr8tC1UPwSzUwurmu8l26TTiwfPCq0fBDc51q+kTVb2tJ48obUuXTmPkU+QqiG1m/1CAPLYOl8GwDPrWq9nNkQ12nDvfk7iumBBAsNc4+U/EZ9U2zzrQ30j9XsI1ukFinH5U8XeJSmKZae0+ddT+mTdM2X5M9O6QEqDg6N6/k/PvizkafhdxzwD1Wn89syRx7mrF84kLfbdQPBXaCEQ+/Sz1XL5tvUFjinJsEnWGQ08YZ7evWp0nOlisyGrAheo1PiAYvAxvMid1TpEjvC7VHOdJxHXybeI=
