@@ -3,3 +3,7 @@ node_js:
   - "node"
   - "stable"
   - "iojs"
+notifications:
+  slack:
+    rooms:
+      - arxstudios:nW2GqWWgZFRcQzo0fnkiInEX#notifications
