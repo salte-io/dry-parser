@@ -3,7 +3,7 @@
 [![NPM downloads][npm-downloads-image]][npm-url]
 
 [![Travis][travis-ci-image]][travis-ci-url]
-[![Code Climate](https://img.shields.io/codeclimate/github/kabisaict/flow.svg)](https://codeclimate.com/github/arxstudios/dry-parser)
+[![Code Climate][code-climate-image]][code-climate-url]
 
 A simple tool for parsing JavaScript objects to avoid repetition.
 
@@ -108,5 +108,7 @@ lib = dry.parse(lib, dir);
 [npm-downloads-image]: http://img.shields.io/npm/dm/dry-parser.svg?style=flat
 [npm-url]: https://npmjs.org/package/dry-parser
 [npm-image]: http://img.shields.io/npm/v/dry-parser.svg?style=flat
-[travis-ci-image]: https://img.shields.io/travis/rust-lang/rust.svg?style=flat
+[travis-ci-image]: https://img.shields.io/travis/arxstudios/dry-parser.svg?style=flat
 [travis-ci-url]: https://travis-ci.org/arxstudios/dry-parser
+[code-climate-image]: https://img.shields.io/codeclimate/github/arxstudios/dry-parser.svg
+[code-climate-url]: https://codeclimate.com/github/arxstudios/dry-parser
