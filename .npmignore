@@ -1,4 +1,7 @@
 .eslintrc
 .eslintignore
 .gitignore
+.editorconfig
+.codeclimate.yml
+.travis.yml
 test
