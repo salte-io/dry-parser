@@ -3,6 +3,9 @@ node_js:
 - node
 - stable
 - iojs
+cache:
+  directories:
+    - node_modules
 deploy:
   provider: npm
   email: admin@arxstudios.net
