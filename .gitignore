@@ -43,4 +43,4 @@ pkgs/
 ##########################
 dev/
 release/
-reports/
+coverage/
