@@ -1,11 +1,17 @@
 var expect = require('chai').expect;
+var sinon = require('sinon');
 var dry = require('../index');
 
 describe('dryParser', function () {
+    var sandbox;
     var config;
     var object;
 
     beforeEach(function () {
+        sandbox = sinon.sandbox.create();
+        sandbox.stub(console, 'warn');
+        sandbox.stub(console, 'error');
+
         config = {
             'dir': {
                 'assets': 'assets',
@@ -20,6 +26,10 @@ describe('dryParser', function () {
         object = {
             'jquery': '{dir.bower}/jquery/jquery.js'
         };
+    });
+
+    afterEach(function () {
+        sandbox.restore();
     });
 
     describe('#parse()', function () {
@@ -44,6 +54,14 @@ describe('dryParser', function () {
             expect(results).to.deep.equal({
                 'jquery': 'assets/bower_components/jquery/jquery.js'
             });
+        });
+
+        it('should log a warning when passed an invalid config', function () {
+            config.dir.less = '{dir.invalidKey}/less';
+
+            dry.parse(config);
+
+            sinon.assert.calledOnce(console.warn);
         });
 
         it('should retain booleans and integers', function () {
