@@ -5,6 +5,11 @@ node_js:
 cache:
   directories:
     - node_modules
+before_script:
+  - npm install -g gulp
+script: gulp
+after_script:
+  - codeclimate < reports/lcov.info
 deploy:
   provider: npm
   email: admin@arxstudios.net
