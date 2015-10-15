@@ -111,7 +111,7 @@
 		"wrap-regex": 2,
 
 		"no-sparse-arrays": 1,
-		"no-console": 1,
+		"no-console": 0,
 		"no-alert": 1,
 		"no-constant-condition": 1,
 		"no-unused-vars": 1,
