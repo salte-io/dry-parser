@@ -4,13 +4,14 @@ var istanbul = require('gulp-istanbul');
 
 gulp.task('default', ['test']);
 
-gulp.task('test', function() {
+gulp.task('pre-test', function() {
+    return gulp.src('index.js')
+        .pipe(istanbul())
+        .pipe(istanbul.hookRequire());
+});
+
+gulp.task('test', ['pre-test'], function() {
     return gulp.src('./test/**/*.js')
-        .pipe(mocha({
-            reporter: 'spec'
-        }))
-        .pipe(istanbul.writeReports({
-            dir: './reports',
-            reporters: ['lcov']
-        }));
+        .pipe(mocha())
+        .pipe(istanbul.writeReports());
 });
