@@ -2,12 +2,12 @@ var expect = require('chai').expect;
 var sinon = require('sinon');
 var dry = require('../index');
 
-describe('dryParser', function () {
+describe('dryParser', function() {
     var sandbox;
     var config;
     var object;
 
-    beforeEach(function () {
+    beforeEach(function() {
         sandbox = sinon.sandbox.create();
         sandbox.stub(console, 'warn');
         sandbox.stub(console, 'error');
@@ -28,12 +28,12 @@ describe('dryParser', function () {
         };
     });
 
-    afterEach(function () {
+    afterEach(function() {
         sandbox.restore();
     });
 
-    describe('#parse()', function () {
-        it('should parse bindings of a single object', function () {
+    describe('#parse()', function() {
+        it('should parse bindings of a single object', function() {
             var results = dry.parse(config);
 
             expect(results).to.deep.equal({
@@ -48,7 +48,7 @@ describe('dryParser', function () {
             });
         });
 
-        it('should parse bindings between two objects', function () {
+        it('should parse bindings between two objects', function() {
             var results = dry.parse(object, config);
 
             expect(results).to.deep.equal({
@@ -56,7 +56,7 @@ describe('dryParser', function () {
             });
         });
 
-        it('should log a warning when passed an invalid config', function () {
+        it('should log a warning when passed an invalid config', function() {
             config.dir.less = '{dir.invalidKey}/less';
 
             dry.parse(config);
@@ -64,7 +64,7 @@ describe('dryParser', function () {
             sinon.assert.calledOnce(console.warn);
         });
 
-        it('should retain booleans and integers', function () {
+        it('should retain booleans and integers', function() {
             var testObject = {
                 someBool: true,
                 someInt: 1
