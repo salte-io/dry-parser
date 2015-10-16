@@ -4,4 +4,5 @@
 .editorconfig
 .codeclimate.yml
 .travis.yml
+coverage
 test
