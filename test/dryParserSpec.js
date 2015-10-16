@@ -4,27 +4,28 @@ var dry = require('../index');
 
 describe('dryParser', function() {
     var sandbox;
-    var config;
-    var object;
+    var data;
+    var expected;
 
     beforeEach(function() {
         sandbox = sinon.sandbox.create();
         sandbox.stub(console, 'warn');
         sandbox.stub(console, 'error');
 
-        config = {
-            'dir': {
-                'assets': 'assets',
-                'less': '{dir.assets}/less',
-                'bower': '{dir.assets}/bower_components'
-            },
-            'lib': {
-                'jquery': '{dir.bower}/jquery/jquery.js'
-            }
+        data = {
+            single: require('../test/single/data.json'),
+            biParse: require('../test/bi-parse/data.json'),
+            array: require('../test/array/data.json'),
+            retainNonStringTypes: require('../test/retain-non-string-types/data.json'),
+            invalid: require('../test/invalid/data.json')
         };
 
-        object = {
-            'jquery': '{dir.bower}/jquery/jquery.js'
+        expected = {
+            single: require('../test/single/expected.json'),
+            biParse: require('../test/bi-parse/expected.json'),
+            array: require('../test/array/expected.json'),
+            retainNonStringTypes: require('../test/retain-non-string-types/data.json'),
+            invalid: require('../test/invalid/data.json')
         };
     });
 
@@ -34,45 +35,34 @@ describe('dryParser', function() {
 
     describe('#parse()', function() {
         it('should parse bindings of a single object', function() {
-            var results = dry.parse(config);
+            var results = dry.parse(data.single);
 
-            expect(results).to.deep.equal({
-                'dir': {
-                    'assets': 'assets',
-                    'less': 'assets/less',
-                    'bower': 'assets/bower_components'
-                },
-                'lib': {
-                    'jquery': 'assets/bower_components/jquery/jquery.js'
-                }
-            });
+            expect(results).to.deep.equal(expected.single);
         });
 
         it('should parse bindings between two objects', function() {
-            var results = dry.parse(object, config);
+            var results = dry.parse(data.biParse, data.single);
 
-            expect(results).to.deep.equal({
-                'jquery': 'assets/bower_components/jquery/jquery.js'
-            });
+            expect(results).to.deep.equal(expected.biParse);
+        });
+
+        it('should parse bindings within an array', function() {
+            var results = dry.parse(data.array);
+
+            expect(results).to.deep.equal(expected.array);
+        });
+
+        it('should retain non-string types', function() {
+            var results = dry.parse(data.retainNonStringTypes);
+
+            expect(results).to.deep.equal(expected.retainNonStringTypes);
         });
 
         it('should log a warning when passed an invalid config', function() {
-            config.dir.less = '{dir.invalidKey}/less';
+            var results = dry.parse(data.invalid);
 
-            dry.parse(config);
-
+            expect(results).to.deep.equal(expected.invalid);
             sinon.assert.calledOnce(console.warn);
-        });
-
-        it('should retain booleans and integers', function() {
-            var testObject = {
-                someBool: true,
-                someInt: 1
-            };
-
-            var results = dry.parse(testObject);
-
-            expect(results).to.deep.equal(testObject);
         });
     });
 });

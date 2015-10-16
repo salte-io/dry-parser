@@ -1,0 +1,14 @@
+{
+    "dir": {
+		"node": "node_modules"
+	},
+	"lib": {
+		"angular": "{dir.node}/angular/angular.js"
+	},
+    "paths": {
+        "libraries": [
+			"{lib.angular}"
+		]
+    },
+    "someValue": "{paths.libraries.0}"
+}
