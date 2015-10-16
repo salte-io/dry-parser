@@ -1,0 +1,16 @@
+{
+	"dir": {
+		"assets": "assets",
+		"angular": "app",
+		"sass": "{dir.assets}/sass",
+		"node": "node_modules",
+		"out": "dist"
+	},
+	"lib": {
+		"jquery": "{dir.node}/jquery/dist/jquery.js",
+		"angular": "{dir.node}/angular/angular.js",
+		"angular-animate": "{dir.node}/angular-animate/angular-animate.js",
+		"ui-bootstrap": "{dir.node}/angular-ui-bootstrap/ui-bootstrap-tpls.js",
+		"ui-router": "{dir.node}/angular-ui-router/release/angular-ui-router.js"
+	}
+}
