@@ -2,7 +2,9 @@
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][npm-url]
 [![Travis][travis-ci-image]][travis-ci-url]
-[![Code Climate][coveralls-master]][coveralls-url]
+[![Coveralls][coveralls-image]][coveralls-url]
+[![Code Climate][code-climate-gpa-image]][code-climate-url]
+[![Code Climate][code-climate-coverage-image]][code-climate-url]
 
 [![David Dependencies][david-dependencies-image]][david-dependencies-url]
 [![David Dependencies][david-dev-dependencies-image]][david-dev-dependencies-url]
@@ -113,6 +115,9 @@ lib = dry.parse(lib, dir);
 
 [travis-ci-image]: https://img.shields.io/travis/arxstudios/dry-parser.svg?style=flat
 [travis-ci-url]: https://travis-ci.org/arxstudios/dry-parser
+
+[coveralls-image]: https://img.shields.io/coveralls/arxstudios/dry-parser/master.svg
+[coveralls-url]: https://coveralls.io/github/arxstudios/dry-parser
 
 [code-climate-gpa-image]: https://img.shields.io/codeclimate/github/arxstudios/dry-parser.svg
 [code-climate-coverage-image]: https://img.shields.io/codeclimate/coverage/github/arxstudios/dry-parser.svg
