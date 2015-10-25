@@ -9,8 +9,8 @@ before_script:
   - npm install -g gulp
 script: gulp
 after_script:
-  - npm install codeclimate-test-reporter
-  - codeclimate-test-reporter < coverage/lcov.info
+  - npm install codeclimate-test-reporter && codeclimate-test-reporter < coverage/lcov.info
+  - npm install coveralls && coveralls < coverage/lcov.info
 deploy:
   provider: npm
   email: admin@arxstudios.net
