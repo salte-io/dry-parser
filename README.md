@@ -2,8 +2,7 @@
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][npm-url]
 [![Travis][travis-ci-image]][travis-ci-url]
-[![Code Climate][code-climate-gpa-image]][code-climate-url]
-[![Code Climate][code-climate-coverage-image]][code-climate-url]
+[![Code Climate][coveralls-master]][coveralls-url]
 
 [![David Dependencies][david-dependencies-image]][david-dependencies-url]
 [![David Dependencies][david-dev-dependencies-image]][david-dev-dependencies-url]
