@@ -5,14 +5,13 @@ node_js:
 cache:
   directories:
     - node_modules
-before_script:
-  - npm install -g gulp
-script: gulp
+script:
+  - npm test
 after_script:
   - npm install coveralls && coveralls < coverage/lcov.info
 deploy:
   provider: npm
-  email: admin@arxstudios.net
+  email: admin@salte.io
   api_key:
     secure: FPoYvp2dH5Cvu2PyJQUuh5wHYFQMGQOpCF/gtCIJVFDysoguzM48DVv8ih5mGa231UWuMflYOAw5FSL5yzJIssqP88jnLfJ7U0Cng67yAIRAg1hC1vQy0QFxU/G9MB2fq8GhvAWlw6RCqUtvqlhavr/iGYgqRYx/fTtOQ2CnXSRu/Ws2/xURJloQ/dCGAGg5kHDqNhpbBLDDMi2YsWRS7Ih3QTkqi2dlOG7sCemxrMQ2ntboLX3I5QYSFVBZYXJeHPKZGiWKMzDlzGZEGFjGOAcXk2GqRik4HH6QIf85Abt3EZ7k8WpBqx/IrLBC9OJwFJwuoZO+97PoQj9piQGIl5VvDyTsgAaCjdlj3v6WxWM++e7KUNxkGuzTAV0WbdGCWHn0PXC159oUxABfmmNPbNY22C+/waAaavVNsB7ZEdW30Y8CibzGe+5VDG8rYehArxValuXz/KSeB3qDNjGixg3kb3bS31+4rrQmz1mepYVWO/WGjEnpSTYOWdalAfdx0dsxC2tLLQvg68UUtcnkDS80i/Uo8RmKLGAQX7t0NuO0tIWOzVPhWxei79AnvRzkKu84odYCN1b8DEoFbetDDdFizm/3livg3iKfwjMYEXKFZ6+CB8VKcguL6DSTX1MnXivD6VNByESKffA6PreaTyAvyL8v840+Zb3yL8TnuLU=
   on:

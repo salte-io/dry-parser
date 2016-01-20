@@ -105,23 +105,23 @@ lib = dry.parse(lib, dir);
 ```
 
 ## License
-[MIT](https://github.com/arxstudios/dry-parser/blob/master/LICENSE)
+[MIT](https://github.com/salte-io/dry-parser/blob/master/LICENSE)
 
 [npm-version-image]: http://img.shields.io/npm/v/dry-parser.svg?style=flat
 [npm-downloads-image]: http://img.shields.io/npm/dm/dry-parser.svg?style=flat
 [npm-url]: https://npmjs.org/package/dry-parser
 
-[travis-ci-image]: https://img.shields.io/travis/arxstudios/dry-parser.svg?style=flat
-[travis-ci-url]: https://travis-ci.org/arxstudios/dry-parser
+[travis-ci-image]: https://img.shields.io/travis/salte-io/dry-parser.svg?style=flat
+[travis-ci-url]: https://travis-ci.org/salte-io/dry-parser
 
-[coveralls-image]: https://img.shields.io/coveralls/arxstudios/dry-parser/master.svg
-[coveralls-url]: https://coveralls.io/github/arxstudios/dry-parser
+[coveralls-image]: https://img.shields.io/coveralls/salte-io/dry-parser/master.svg
+[coveralls-url]: https://coveralls.io/github/salte-io/dry-parser
 
-[code-climate-gpa-image]: https://img.shields.io/codeclimate/github/arxstudios/dry-parser.svg
-[code-climate-coverage-image]: https://img.shields.io/codeclimate/coverage/github/arxstudios/dry-parser.svg
-[code-climate-url]: https://codeclimate.com/github/arxstudios/dry-parser
+[code-climate-gpa-image]: https://img.shields.io/codeclimate/github/salte-io/dry-parser.svg
+[code-climate-coverage-image]: https://img.shields.io/codeclimate/coverage/github/salte-io/dry-parser.svg
+[code-climate-url]: https://codeclimate.com/github/salte-io/dry-parser
 
-[david-dependencies-image]: https://img.shields.io/david/arxstudios/dry-parser.svg
-[david-dev-dependencies-image]: https://img.shields.io/david/dev/arxstudios/dry-parser.svg
-[david-dependencies-url]: https://david-dm.org/arxstudios/dry-parser
-[david-dev-dependencies-url]: https://david-dm.org/arxstudios/dry-parser#info=devDependencies
+[david-dependencies-image]: https://img.shields.io/david/salte-io/dry-parser.svg
+[david-dev-dependencies-image]: https://img.shields.io/david/dev/salte-io/dry-parser.svg
+[david-dependencies-url]: https://david-dm.org/salte-io/dry-parser
+[david-dev-dependencies-url]: https://david-dm.org/salte-io/dry-parser#info=devDependencies
