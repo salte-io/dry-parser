@@ -3,9 +3,12 @@
   "version": "0.3.4",
   "description": "A simple tool for parsing JavaScript objects to avoid repetition.",
   "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arxstudios/dry-parser.git"
+    "url": "https://github.com/salte-io/dry-parser.git"
   },
   "keywords": [
     "dry",
@@ -14,22 +17,22 @@
     "json",
     "object"
   ],
-  "author": "Arx Studios <nickwoodwrd@gmail.com>",
+  "author": "Salte <admin@salte.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arxstudios/dry-parser/issues"
+    "url": "https://github.com/salte-io/dry-parser/issues"
   },
-  "homepage": "https://github.com/arxstudios/dry-parser#readme",
+  "homepage": "https://github.com/salte-io/dry-parser#readme",
   "dependencies": {
-    "lodash": "^3.10.1"
+    "lodash": "3.10.1"
   },
   "devDependencies": {
-    "chai": "^3.3.0",
-    "eslint": "^1.6.0",
-    "gulp": "^3.9.0",
-    "gulp-istanbul": "^0.10.1",
-    "gulp-mocha": "^2.1.3",
-    "mocha": "^2.3.3",
-    "sinon": "^1.17.1"
+    "chai": "3.3.0",
+    "eslint": "1.6.0",
+    "gulp": "3.9.0",
+    "gulp-istanbul": "0.10.1",
+    "gulp-mocha": "2.1.3",
+    "mocha": "2.3.3",
+    "sinon": "1.17.1"
   }
 }
