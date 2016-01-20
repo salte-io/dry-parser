@@ -1,6 +1,6 @@
 {
   "name": "dry-parser",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "A simple tool for parsing JavaScript objects to avoid repetition.",
   "main": "index.js",
   "scripts": {
