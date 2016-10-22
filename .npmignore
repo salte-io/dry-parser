@@ -1,8 +1,9 @@
-.eslintrc
-.eslintignore
-.gitignore
-.editorconfig
-.codeclimate.yml
-.travis.yml
+node_modules
 coverage
+.nyc_output
+.eslintrc.yml
+.gitignore
+.gitattributes
+.editorconfig
+.travis.yml
 test
