@@ -1,15 +1,14 @@
 {
   "name": "dry-parser",
-  "version": "0.3.8",
-  "description": "A simple tool for parsing JavaScript objects to avoid repetition.",
+  "version": "0.0.0-semantically-released.0",
   "main": "index.js",
-  "scripts": {
-    "test": "gulp test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/salte-io/dry-parser.git"
-  },
+  "description": "A simple tool for parsing JavaScript objects to avoid repetition.",
+  "homepage": "https://github.com/salte-io/dry-parser",
+  "bugs": "https://github.com/salte-io/dry-parser/issues",
+  "contributors": [
+    "Nick Woodward <nick@salte.io>",
+    "Dave Woodward <dave@salte.io>"
+  ],
   "keywords": [
     "dry",
     "parser",
@@ -17,22 +16,35 @@
     "json",
     "object"
   ],
-  "author": "Salte <admin@salte.io>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/salte-io/dry-parser/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/salte-io/dry-parser.git"
   },
-  "homepage": "https://github.com/salte-io/dry-parser#readme",
+  "scripts": {
+    "lint": "eslint index.js test/**/*.js",
+    "test": "nyc --reporter=lcov --reporter=text mocha test/**/*.spec.js",
+    "report-coverage": "coveralls < coverage/lcov.info",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "license": "MIT",
   "dependencies": {
     "lodash": "3.10.1"
   },
   "devDependencies": {
-    "chai": "3.3.0",
-    "eslint": "1.6.0",
-    "gulp": "3.9.0",
-    "gulp-istanbul": "0.10.1",
-    "gulp-mocha": "2.1.3",
-    "mocha": "2.3.3",
-    "sinon": "1.17.1"
+    "chai": "3.5.0",
+    "coveralls": "2.11.14",
+    "cz-conventional-changelog": "1.2.0",
+    "eslint": "3.8.1",
+    "eslint-config-google": "0.7.0",
+    "eslint-plugin-mocha": "4.7.0",
+    "mocha": "3.1.2",
+    "nyc": "8.3.2",
+    "semantic-release": "4.3.5",
+    "sinon": "1.17.6"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
