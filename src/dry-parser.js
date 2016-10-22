@@ -1,4 +1,4 @@
-var _ = require('lodash');
+var utils = require('./utils.js');
 var dry = this;
 
 /**
@@ -9,13 +9,15 @@ dry.regex = /\{([\w\d.-]+)\}/g;
 
 dry.parse = function(object, baseObject) {
     var result = object;
-    if (_.isArray(object) || _.isObject(object)) {
-        _.forEach(object, function(value, key) {
-            result[key] = dry.parse(result[key], baseObject || object);
-        });
-    } else if (_.isString(object)) {
+    if (Array.isArray(object) || typeof object === 'object') {
+        for (var key in object) {
+            if (object.hasOwnProperty(key)) {
+                result[key] = dry.parse(result[key], baseObject || object);
+            }
+        }
+    } else if (typeof object === 'string') {
         result = object.replace(dry.regex, function(match, g1) {
-            var parsedValue = dry.parse(_.get(baseObject, g1), baseObject);
+            var parsedValue = dry.parse(utils.deepFind(baseObject, g1), baseObject);
 
             if (parsedValue) {
                 return parsedValue;
