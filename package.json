@@ -1,7 +1,7 @@
 {
   "name": "dry-parser",
   "version": "0.0.0-semantically-released.0",
-  "main": "index.js",
+  "main": "src/dry-parser.js",
   "description": "A simple tool for parsing JavaScript objects to avoid repetition.",
   "homepage": "https://github.com/salte-io/dry-parser",
   "bugs": "https://github.com/salte-io/dry-parser/issues",
@@ -16,6 +16,9 @@
     "json",
     "object"
   ],
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/salte-io/dry-parser.git"
@@ -23,13 +26,11 @@
   "scripts": {
     "lint": "eslint index.js test/**/*.js",
     "test": "nyc --reporter=lcov --reporter=text mocha test/**/*.spec.js",
+    "tdd": "mocha -w test/**/*.spec.js",
     "report-coverage": "coveralls < coverage/lcov.info",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "license": "MIT",
-  "dependencies": {
-    "lodash": "3.10.1"
-  },
   "devDependencies": {
     "chai": "3.5.0",
     "coveralls": "2.11.14",

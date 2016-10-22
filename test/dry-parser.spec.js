@@ -1,68 +1,120 @@
 var expect = require('chai').expect;
 var sinon = require('sinon');
-var dry = require('../index');
+var dry = require('../src/dry-parser.js');
 
-describe('dryParser', function() {
+describe('dry-parser', function() {
     var sandbox;
-    var data;
-    var expected;
 
     beforeEach(function() {
         sandbox = sinon.sandbox.create();
         sandbox.stub(console, 'warn');
-        sandbox.stub(console, 'error');
-
-        data = {
-            single: require('../test/single/data.json'),
-            biParse: require('../test/bi-parse/data.json'),
-            array: require('../test/array/data.json'),
-            retainNonStringTypes: require('../test/retain-non-string-types/data.json'),
-            invalid: require('../test/invalid/data.json')
-        };
-
-        expected = {
-            single: require('../test/single/expected.json'),
-            biParse: require('../test/bi-parse/expected.json'),
-            array: require('../test/array/expected.json'),
-            retainNonStringTypes: require('../test/retain-non-string-types/data.json'),
-            invalid: require('../test/invalid/data.json')
-        };
     });
 
     afterEach(function() {
         sandbox.restore();
     });
 
-    describe('#parse()', function() {
-        it('should parse bindings of a single object', function() {
-            var results = dry.parse(data.single);
+    describe('function(parse)', function() {
+        describe('single-object', function() {
+            it('should parse bindings of a single object', function() {
+                var results = dry.parse({
+                    assets: 'assets',
+                    sass: '{assets}/sass'
+                });
 
-            expect(results).to.deep.equal(expected.single);
+                expect(results).to.deep.equal({
+                    assets: 'assets',
+                    sass: 'assets/sass'
+                });
+            });
+
+            it('should parse nested bindings of a single object', function() {
+                var results = dry.parse({
+                    dir: {
+                        node: 'node_modules'
+                    },
+                    lib: {
+                        angular: '{dir.node}/angular/angular.js'
+                    }
+                });
+
+                expect(results).to.deep.equal({
+                    dir: {
+                        node: 'node_modules'
+                    },
+                    lib: {
+                        angular: 'node_modules/angular/angular.js'
+                    }
+                });
+            });
+
+            it('should support whatever ordering is provided', function() {
+                var results = dry.parse({
+                    lodash: '{node}/lodash',
+                    object: '{lodash}/object',
+                    node: 'node_modules'
+                });
+
+                expect(results).to.deep.equal({
+                    lodash: 'node_modules/lodash',
+                    object: 'node_modules/lodash/object',
+                    node: 'node_modules'
+                });
+            });
+
+            it('should parse bindings within an array', function() {
+                var results = dry.parse({
+                    libraries: [
+                        'angular'
+                    ],
+                    someValue: '{libraries.0}'
+                });
+
+                expect(results).to.deep.equal({
+                    libraries: [
+                        'angular'
+                    ],
+                    someValue: 'angular'
+                });
+            });
+
+            it('should retain non-string types', function() {
+                var results = dry.parse({
+                    bool: true,
+                    int: 1
+                });
+
+                expect(results).to.deep.equal({
+                    bool: true,
+                    int: 1
+                });
+            });
+
+            it('should log a warning when passed an invalid config', function() {
+                var results = dry.parse({
+                    invalid: '{dir.invalidKey}/less'
+                });
+
+                expect(results).to.deep.equal({
+                    invalid: '{dir.invalidKey}/less'
+                });
+                expect(console.warn.callCount).to.equal(1);
+                expect(console.warn.calledWith('The following key doesn\'t map to any values; ', 'dir.invalidKey')).to.equal(true);
+            });
         });
 
-        it('should parse bindings between two objects', function() {
-            var results = dry.parse(data.biParse, data.single);
+        describe('bi-parsing', function() {
+            it('should parse bindings between two objects', function() {
+                var results = dry.parse({
+                    sass: '{assets}/sass'
+                }, {
+                    assets: 'assets'
+                });
 
-            expect(results).to.deep.equal(expected.biParse);
-        });
-
-        it('should parse bindings within an array', function() {
-            var results = dry.parse(data.array);
-
-            expect(results).to.deep.equal(expected.array);
-        });
-
-        it('should retain non-string types', function() {
-            var results = dry.parse(data.retainNonStringTypes);
-
-            expect(results).to.deep.equal(expected.retainNonStringTypes);
-        });
-
-        it('should log a warning when passed an invalid config', function() {
-            var results = dry.parse(data.invalid);
-
-            expect(results).to.deep.equal(expected.invalid);
-            sinon.assert.calledOnce(console.warn);
+                expect(results).to.deep.equal({
+                    sass: 'assets/sass'
+                });
+            });
         });
     });
 });
