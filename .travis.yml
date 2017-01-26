@@ -9,7 +9,7 @@ cache:
 branches:
   only:
     - master
-    - /^greenkeeper-.*$/
+    - /^greenkeeper/.*$/
 before_script:
   - npm prune
 script:
