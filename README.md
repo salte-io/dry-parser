@@ -1,6 +1,5 @@
 # Dry Parser
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/salte-io/dry-parser.svg)](https://greenkeeper.io/)
 [![Slack Status][slack-image]][slack-url]
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][npm-url]
@@ -9,6 +8,10 @@
 
 [![Commitizen friendly][commitizen-image]][commitizen-url]
 [![semantic-release][semantic-release-image]][semantic-release-url]
+[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+
+[greenkeeper-image]: https://badges.greenkeeper.io/salte-io/dry-parser.svg
+[greenkeeper-url]: https://greenkeeper.io
 
 A simple tool for parsing JavaScript objects to avoid repetition.
 
