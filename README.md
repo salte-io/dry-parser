@@ -1,4 +1,6 @@
 # Dry Parser
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/salte-io/dry-parser.svg)](https://greenkeeper.io/)
 [![Slack Status][slack-image]][slack-url]
 [![NPM Version][npm-version-image]][npm-url]
 [![NPM Downloads][npm-downloads-image]][npm-url]
