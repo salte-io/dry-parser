@@ -1,23 +1,23 @@
-var expect = require('chai').expect;
-var sinon = require('sinon');
-var dry = require('../src/dry-parser.js');
+const expect = require('chai').expect;
+const sinon = require('sinon');
+const dry = require('../src/dry-parser.js');
 
-describe('dry-parser', function() {
-    var sandbox;
+describe('dry-parser', () => {
+    let sandbox;
 
-    beforeEach(function() {
+    beforeEach(() => {
         sandbox = sinon.sandbox.create();
         sandbox.stub(console, 'warn');
     });
 
-    afterEach(function() {
+    afterEach(() => {
         sandbox.restore();
     });
 
-    describe('function(parse)', function() {
-        describe('single-object', function() {
-            it('should parse bindings of a single object', function() {
-                var results = dry.parse({
+    describe('function(parse)', () => {
+        describe('single-object', () => {
+            it('should parse bindings of a single object', () => {
+                const results = dry.parse({
                     assets: 'assets',
                     sass: '{assets}/sass'
                 });
@@ -28,8 +28,8 @@ describe('dry-parser', function() {
                 });
             });
 
-            it('should parse nested bindings of a single object', function() {
-                var results = dry.parse({
+            it('should parse nested bindings of a single object', () => {
+                const results = dry.parse({
                     dir: {
                         node: 'node_modules'
                     },
@@ -48,8 +48,8 @@ describe('dry-parser', function() {
                 });
             });
 
-            it('should support whatever ordering is provided', function() {
-                var results = dry.parse({
+            it('should support whatever ordering is provided', () => {
+                const results = dry.parse({
                     lodash: '{node}/lodash',
                     object: '{lodash}/object',
                     node: 'node_modules'
@@ -62,8 +62,8 @@ describe('dry-parser', function() {
                 });
             });
 
-            it('should parse bindings within an array', function() {
-                var results = dry.parse({
+            it('should parse bindings within an array', () => {
+                const results = dry.parse({
                     libraries: [
                         'angular'
                     ],
@@ -78,8 +78,8 @@ describe('dry-parser', function() {
                 });
             });
 
-            it('should retain non-string types', function() {
-                var results = dry.parse({
+            it('should retain non-string types', () => {
+                const results = dry.parse({
                     bool: true,
                     int: 1
                 });
@@ -90,8 +90,8 @@ describe('dry-parser', function() {
                 });
             });
 
-            it('should log a warning when passed an invalid config', function() {
-                var results = dry.parse({
+            it('should log a warning when passed an invalid config', () => {
+                const results = dry.parse({
                     invalid: '{dir.invalidKey}/less'
                 });
 
@@ -103,9 +103,9 @@ describe('dry-parser', function() {
             });
         });
 
-        describe('bi-parsing', function() {
-            it('should parse bindings between two objects', function() {
-                var results = dry.parse({
+        describe('bi-parsing', () => {
+            it('should parse bindings between two objects', () => {
+                const results = dry.parse({
                     sass: '{assets}/sass'
                 }, {
                     assets: 'assets'

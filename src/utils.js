@@ -1,13 +1,13 @@
-var utils = this;
+const utils = {};
 
-utils.deepFind = function(object, path) {
+utils.deepFind = (object, path) => {
     if (!object) {
         return undefined;
     }
-    var paths = path.split('.');
-    var current = object;
+    const paths = path.split('.');
+    let current = object;
 
-    for (var i = 0; i < paths.length; i++) {
+    for (let i = 0; i < paths.length; i++) {
         if (current[paths[i]] === undefined) {
             return undefined;
         } else {

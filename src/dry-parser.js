@@ -1,5 +1,5 @@
-var utils = require('./utils.js');
-var dry = this;
+const utils = require('./utils.js');
+const dry = {};
 
 /**
  * Contains a group of frequently used regular expressions.
@@ -7,17 +7,17 @@ var dry = this;
  */
 dry.regex = /\{([\w\d.-]+)\}/g;
 
-dry.parse = function(object, baseObject) {
-    var result = object;
+dry.parse = (object, baseObject) => {
+    let result = object;
     if (Array.isArray(object) || typeof object === 'object') {
-        for (var key in object) {
+        for (const key in object) {
             if (object.hasOwnProperty(key)) {
                 result[key] = dry.parse(result[key], baseObject || object);
             }
         }
     } else if (typeof object === 'string') {
-        result = object.replace(dry.regex, function(match, g1) {
-            var parsedValue = dry.parse(utils.deepFind(baseObject, g1), baseObject);
+        result = object.replace(dry.regex, (match, g1) => {
+            const parsedValue = dry.parse(utils.deepFind(baseObject, g1), baseObject);
 
             if (parsedValue) {
                 return parsedValue;
