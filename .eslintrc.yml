@@ -1,6 +1,12 @@
 extends: google
+env:
+  browser: true
+  serviceworker: true
+  worker: true
 globals:
   Logging: true
+parserOptions:
+  sourceType: module
 rules:
   comma-dangle:
     - error
@@ -18,4 +24,10 @@ rules:
   arrow-parens: 0
   new-cap: 0
   camelcase: 0
-  no-var: 0
+  no-var: 2
+  prefer-const: 2
+  no-confusing-arrow: 2
+  prefer-arrow-callback: 2
+  consistent-this:
+    - error
+    - window.AuthenticationContext
