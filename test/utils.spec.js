@@ -1,18 +1,18 @@
-var expect = require('chai').expect;
-var utils = require('../src/utils.js');
+const expect = require('chai').expect;
+const utils = require('../src/utils.js');
 
-describe('utils', function() {
-    describe('function(deepFind)', function() {
-        it('should find values from a path', function() {
-            var results = utils.deepFind({
+describe('utils', () => {
+    describe('function(deepFind)', () => {
+        it('should find values from a path', () => {
+            const results = utils.deepFind({
                 assets: 'assets'
             }, 'assets');
 
             expect(results).to.equal('assets');
         });
 
-        it('should find values from a deep path', function() {
-            var results = utils.deepFind({
+        it('should find values from a deep path', () => {
+            const results = utils.deepFind({
                 dir: {
                     assets: 'assets'
                 }
@@ -21,14 +21,14 @@ describe('utils', function() {
             expect(results).to.equal('assets');
         });
 
-        it('should be undefined if a path does not exist', function() {
-            var results = utils.deepFind({}, 'assets');
+        it('should be undefined if a path does not exist', () => {
+            const results = utils.deepFind({}, 'assets');
 
             expect(results).to.equal(undefined);
         });
 
-        it('should be undefined if the object is falsy', function() {
-            var results = utils.deepFind(null, 'assets');
+        it('should be undefined if the object is falsy', () => {
+            const results = utils.deepFind(null, 'assets');
 
             expect(results).to.equal(undefined);
         });
