@@ -1,0 +1,17 @@
+scripts:
+  lint:
+    script: eslint index.js test/**/*.js
+    description: Checks for any formatting errors
+  test:
+    default:
+      script: nyc --reporter=lcov --reporter=text mocha test/**/*.spec.js
+      description: Executes the Test Suite
+    tdd:
+      script: mocha -w test/**/*.spec.js
+      description: Watches for changes and executes the Test Suite accordingly
+  report-coverage:
+    script: coveralls < coverage/lcov.info
+    description: Reports code coverage information to Coveralls
+  semantic-release:
+    script: semantic-release
+    description: Publishes the artifact to NPM and GitHub
