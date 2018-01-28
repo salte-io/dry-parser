@@ -28,7 +28,8 @@
     "test": "nyc --reporter=lcov --reporter=text mocha test/**/*.spec.js",
     "tdd": "mocha -w test/**/*.spec.js",
     "report-coverage": "coveralls < coverage/lcov.info",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "precommit": "remove-lockfiles"
   },
   "license": "MIT",
   "devDependencies": {
@@ -38,8 +39,10 @@
     "eslint": "^4.1.0",
     "eslint-config-google": "^0.9.1",
     "eslint-plugin-mocha": "^4.7.0",
+    "husky": "0.14.3",
     "mocha": "^4.0.0",
     "nyc": "^11.0.0",
+    "remove-lockfiles": "2.1.2",
     "semantic-release": "^8.0.3",
     "sinon": "^4.0.0"
   },
