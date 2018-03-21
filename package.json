@@ -41,7 +41,7 @@
     "nyc": "^11.0.0",
     "remove-lockfiles": "2.1.2",
     "semantic-release": "^15.0.0",
-    "sinon": "^4.0.0"
+    "sinon": "^5.0.0"
   },
   "config": {
     "commitizen": {
