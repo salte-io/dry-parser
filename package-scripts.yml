@@ -1,6 +1,6 @@
 scripts:
   lint:
-    script: eslint index.js test/**/*.js
+    script: eslint src/index.js test/**/*.js
     description: Checks for any formatting errors
   test:
     default:
