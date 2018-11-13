@@ -8,6 +8,9 @@ globals:
 parserOptions:
   sourceType: module
 rules:
+  indent:
+    - error
+    - 4
   comma-dangle:
     - error
     - arrays: never
