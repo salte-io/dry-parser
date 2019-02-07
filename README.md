@@ -135,8 +135,8 @@ THE SOFTWARE.
 [npm-downloads-image]: http://img.shields.io/npm/dm/dry-parser.svg?style=flat
 [npm-url]: https://npmjs.org/package/dry-parser
 
-[travis-ci-image]: https://img.shields.io/travis/salte-io/dry-parser.svg?style=flat
-[travis-ci-url]: https://travis-ci.org/salte-io/dry-parser
+[travis-ci-image]: https://img.shields.io/travis/com/salte-io/dry-parser.svg?style=flat
+[travis-ci-url]: https://travis-ci.com/salte-io/dry-parser
 
 [coveralls-image]: https://img.shields.io/coveralls/salte-io/dry-parser/master.svg
 [coveralls-url]: https://coveralls.io/github/salte-io/dry-parser
