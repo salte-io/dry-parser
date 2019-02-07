@@ -24,28 +24,32 @@
     "url": "https://github.com/salte-io/dry-parser.git"
   },
   "scripts": {
-    "start": "nps",
-    "pre-commit": "remove-lockfiles"
+    "start": "nps"
   },
   "license": "MIT",
   "devDependencies": {
-    "chai": "^4.0.2",
-    "coveralls": "^3.0.0",
+    "chai": "4.2.0",
+    "coveralls": "3.0.2",
     "cz-conventional-changelog": "^2.0.0",
-    "eslint": "^5.0.0",
+    "eslint": "5.13.0",
     "eslint-config-google": "^0.12.0",
-    "eslint-plugin-mocha": "^5.0.0",
-    "husky": "^1.0.0",
-    "mocha": "^5.0.0",
-    "nps": "^5.0.0",
+    "eslint-plugin-mocha": "5.2.1",
+    "husky": "1.3.1",
+    "mocha": "5.2.0",
+    "nps": "5.9.3",
     "nyc": "^13.2.0",
     "remove-lockfiles": "2.1.3",
-    "semantic-release": "^15.0.0",
+    "semantic-release": "15.13.3",
     "sinon": "^7.2.3"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "remove-lockfiles"
     }
   }
 }
