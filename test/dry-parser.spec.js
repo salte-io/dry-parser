@@ -3,15 +3,12 @@ const sinon = require('sinon');
 const dry = require('../src/dry-parser.js');
 
 describe('dry-parser', () => {
-    let sandbox;
-
     beforeEach(() => {
-        sandbox = sinon.sandbox.create();
-        sandbox.stub(console, 'warn');
+        sinon.stub(console, 'warn');
     });
 
     afterEach(() => {
-        sandbox.restore();
+        sinon.restore();
     });
 
     describe('function(parse)', () => {

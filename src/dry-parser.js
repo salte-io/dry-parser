@@ -10,11 +10,9 @@ dry.regex = /\{([\w\d.-]+)\}/g;
 dry.parse = (object, baseObject) => {
     let result = object;
     if (Array.isArray(object) || typeof object === 'object') {
-        for (const key in object) {
-            if (object.hasOwnProperty(key)) {
-                result[key] = dry.parse(result[key], baseObject || object);
-            }
-        }
+        Object.keys(object).forEach((key) => {
+            result[key] = dry.parse(result[key], baseObject || object);
+        });
     } else if (typeof object === 'string') {
         result = object.replace(dry.regex, (match, g1) => {
             const parsedValue = dry.parse(utils.deepFind(baseObject, g1), baseObject);
