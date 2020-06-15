@@ -34,7 +34,7 @@
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-mocha": "^7.0.1",
     "husky": "^4.0.2",
-    "mocha": "^7.0.1",
+    "mocha": "^8.0.1",
     "nps": "^5.9.3",
     "nyc": "^15.0.0",
     "remove-lockfiles": "^2.1.3",
