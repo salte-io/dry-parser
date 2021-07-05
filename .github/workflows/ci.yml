@@ -3,10 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   install:
@@ -70,7 +70,7 @@ jobs:
     name: Release
     runs-on: ubuntu-18.04
     needs: [validate]
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout
