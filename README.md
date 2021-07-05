@@ -132,10 +132,10 @@ THE SOFTWARE.
 [npm-downloads-image]: http://img.shields.io/npm/dm/dry-parser.svg?style=flat
 [npm-url]: https://npmjs.org/package/dry-parser
 
-[github-actions-image]: https://github.com/salte-io/dry-parser/actions/workflows/ci.yml/badge.svg?branch=master
+[github-actions-image]: https://github.com/salte-io/dry-parser/actions/workflows/ci.yml/badge.svg?branch=main
 [github-actions-url]: https://github.com/salte-io/dry-parser/actions/workflows/ci.yml
 
-[coveralls-image]: https://img.shields.io/coveralls/salte-io/dry-parser/master.svg
+[coveralls-image]: https://img.shields.io/coveralls/salte-io/dry-parser/main.svg
 [coveralls-url]: https://coveralls.io/github/salte-io/dry-parser
 
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
